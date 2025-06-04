@@ -10,10 +10,16 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CDN Font Awesome v6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <link rel="stylesheet" href="{{ asset('frontend/fonts/icomoon/style.css') }}" />
 
@@ -40,16 +46,16 @@
         <div class="site-mobile-menu-body"></div>
       </div>
 
-      <header class="site-navbar site-navbar-target" role="banner">
+      <header class="custom-navbar site-navbar site-navbar-target" role="banner">
         <div class="container">
           <div class="row align-items-center position-relative">
-            <div class="col-3">
-            </div>
+            <div class="col-3"></div> <!--  Kosong-->
             <div class="col-9 text-right">
-              <span class="d-inline-block d-lg-none"
-                ><a href="#" class="site-menu-toggle js-menu-toggle py-5"
-                  ><span class="icon-menu h3 text-black"></span></a
-              ></span>
+              <span class="d-inline-block d-lg-none">
+                <a href="#" class="custom-toggle site-menu-toggle js-menu-toggle py-5">
+                  <span class="icon-menu h3" style="color: white;"></span>
+                </a>
+              </span>
 
               <nav
                 class="site-navigation text-right ml-auto d-none d-lg-block"
@@ -73,16 +79,16 @@
 
       @yield('content')
 
-      <div class="site-section bg-primary py-5">
+      <div class="site-section bg-main py-5">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 mb-4 mb-md-0">
-              <h2 class="mb-0 text-white">Tunggu apalagi?</h2>
-              <p class="mb-0 opa-7">
+              <h2 class="mb-2 text-white"><strong>Tunggu apalagi?</strong></h2>
+              <p class="mb-0 opa-7"><strong>
                 Sewa mobilmu sekarang di Vindway — drive your way dengan nyaman dan hemat!</p>
-            </div>
+            </div></strong>
             <div class="col-lg-5 text-md-right">
-              <a href="#" class="btn btn-primary btn-white">Sewa Sekarang</a>
+              <a href="#" class="btn btn-main btn-white text-main">Sewa Sekarang</a>
             </div>
           </div>
         </div>
@@ -90,51 +96,40 @@
 
       <footer class="site-footer">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">About Us</h2>
-              <p>
-               {{ $setting->footer_description }}
-              </p>
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-6 mt-5">
+              <h1 class="footer-heading mb-4">Social Media</h1>
+              <p>{{ $setting->footer_description }}</p>
               <ul class="list-unstyled social">
-                <li>
-                  <a href="{{ $setting->facebook }}"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="{{ $setting->instagram }}"><span class="icon-instagram"></span></a>
-                </li>
-                <li>
-                  <a href="{{ $setting->twitter }}"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="{{ $setting->linkedin }}"><span class="icon-linkedin"></span></a>
-                </li>
+                <li><a href="{{ $setting->facebook }}"><span class="icon-facebook"></span></a></li>
+                <li><a href="{{ $setting->instagram }}"><span class="icon-instagram"></span></a></li>
+                <li><a href="{{ $setting->twitter }}"><span class="fa-brands fa-x-twitter"></span></a></li>
+                <li><a href="{{ $setting->linkedin }}"><span class="fa-brands fa-tiktok"></span></a></li>
               </ul>
             </div>
-            <div class="col-lg-8 ml-auto">
-              <div class="row">
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Quick Links</h2>
+            <div class="col-lg-6 ml-auto">
+                  <h1 class="footer-heading mb-4 mt-5">About Us</h1>
                   <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li class="d-block mb-3">
+                      <span class="d-block text-black">Alamat Lengkap:</span>
+                      <span>{{ $setting->alamat ?? '-' }}</span>
+                    </li>
+                    <li class="d-block mb-3">
+                      <span class="d-block text-black">Phone:</span
+                      ><span>{{ $setting->phone ?? "-" }}</span>
+                    </li>
+                    <li class="d-block mb-3">
+                      <span class="d-block text-black">Email:</span
+                      ><span>{{ $setting->email ?? "-" }}</span>
+                    </li>
                   </ul>
-                </div>
-              </div>
             </div>
           </div>
-          <div class="row pt-5 mt-5 text-center">
-            <div class="col-md-12">
-              <div class="border-top pt-5">
+              <div class="border-top pt-5 text-center">
                 <p>
                   &copy; <script>document.write(new Date().getFullYear());</script> VINDWAY | All rights reserved
                 </p>
               </div>
-            </div>
-          </div>
         </div>
       </footer>
     </div>
@@ -153,5 +148,14 @@
 
     <script src="{{ asset('frontend/js/main.js') }}"></script>
     @stack('script-alt')
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 50,
+        once: true,
+        duration: 500,
+      });
+    </script>
   </body>
 </html>

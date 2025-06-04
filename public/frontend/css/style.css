@@ -227,10 +227,14 @@ a {
   a:hover {
     text-decoration: none; }
 
-h1, h2, h3, h4, h5,
+h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   font-weight: 300;
   color: #364d59; }
+
+h1{
+  font-family: 'Poppins', sans-serif;
+}
 
 .border-2 {
   border-width: 2px; }
@@ -281,10 +285,10 @@ h1, h2, h3, h4, h5,
     padding: 4em 0; }
 
 .site-footer {
-  padding: 4em 0; }
+  padding: 0em 0; }
   @media (min-width: 768px) {
     .site-footer {
-      padding: 8em 0; } }
+      padding: 0em 0; } }
   .site-footer .border-top {
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important; }
   .site-footer a {
@@ -1568,7 +1572,7 @@ h1, h2, h3, h4, h5,
   border-radius: 7px;
   background: #fff;
   padding: 30px;
-  border-bottom: 4px solid #0779e4;
+  border-bottom: 4px solid #f96d27;
   -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1); }
   .testimonial-2 blockquote {
@@ -1584,7 +1588,7 @@ h1, h2, h3, h4, h5,
     .testimonial-2 .author-name > span:nth-of-type(2) {
       color: #ccc; }
 
-.hero {
+/* .hero {
   position: relative;
   background-size: cover; }
   .hero, .hero > .container > .row {
@@ -1600,7 +1604,7 @@ h1, h2, h3, h4, h5,
       font-weight: 900; }
   .hero.inner-page, .hero.inner-page > .container > .row {
     height: 40vh !important;
-    min-height: 200px; }
+    min-height: 200px; } */
 
 .custom-breadcrumbs {
   padding-bottom: 40px; }
@@ -1719,7 +1723,7 @@ h1, h2, h3, h4, h5,
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #0779e4;
+    background: #f96d27;
     color: #fff;
     position: relative; }
     .social li a > span {
@@ -1730,7 +1734,7 @@ h1, h2, h3, h4, h5,
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
-    .social li a:hover {
+    .social li a :hover {
       color: #fff; }
 
 .listing {
@@ -1761,3 +1765,138 @@ h1, h2, h3, h4, h5,
   .listing p {
     color: #888;
     font-size: 14px; }
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../images/hero.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.step,
+.listing,
+.testimonial-2 {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.step:hover,
+.listing:hover,
+.testimonial-2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.number-display {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Sticky navbar hanya untuk layar besar */
+/* Navbar Desktop (≥ 992px) */
+/* DESKTOP ≥ 992px */
+@media (min-width: 992px) {
+  .custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: #f96d27 !important;
+    padding: 0rem 0rem !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .custom-navbar .site-navigation {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+
+  .custom-navbar .site-menu {
+    display: flex !important;
+    gap: 20px;
+    margin-bottom: 0 !important;
+  }
+
+  .custom-navbar .site-menu li {
+    list-style: none !important;
+  }
+
+  .custom-navbar .nav-link {
+    color: white !important;
+    font-weight: 500 !important;
+  }
+
+  .custom-navbar .nav-link:hover {
+    color: #153f69 !important;
+    transform: translateY(-5px);
+  }
+}
+
+/* MOBILE < 992px */
+@media (max-width: 991.98px) {
+  .custom-navbar {
+    background-color: #f96d27 !important;
+    padding: 0.5rem 0rem !important;
+  }
+}
+
+/* Warna utama */
+:root {
+  --main: #f96d27;
+}
+
+/* Background utama */
+.bg-main {
+  background-color: var(--main) !important;
+}
+
+/* Teks utama */
+.text-main {
+  color: var(--main) !important;
+}
+
+/* Border utama */
+.border-main {
+  border-color: var(--main) !important;
+}
+
+/* Button dengan warna utama */
+.btn-main {
+  background-color: var(--main);
+  color: white;
+  border: none;
+}
+
+.btn-main:hover {
+  background-color: #c54408; /* sedikit lebih gelap saat hover */
+}
+
+@media (max-width: 768px) {
+  .hero img {
+    max-height: 100px !important;
+    margin-left: 2rem !important;
+    margin-top: 2rem !important;
+    margin-top: 10rem !important;
+  }
+
+  .hero-content {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem !important;
+  }
+
+  .hero-content p {
+    font-size: 1rem !important;
+  }
+
+  .btn-main {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 1.2rem !important;
+  }
+}
+
+

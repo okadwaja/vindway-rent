@@ -29,7 +29,7 @@ class CarRequest extends FormRequest
                     'price' => 'required|numeric',
                     'penumpang' => 'required|numeric',
                     'description' => 'required',
-                    'image' => ['required','image','mimes:jpeg,png,jpg,gif','max:4096'],
+                    'image' => ['required','image','mimes:jpeg,png,jpg,gif','max:10096'],
                     'status' =>  ['required']
                 ];
             }
@@ -41,7 +41,7 @@ class CarRequest extends FormRequest
                     'price' => 'required|numeric',
                     'penumpang' => 'required|numeric',
                     'description' => 'required',
-                    'image' =>  ['image','mimes:jpeg,png,jpg,gif','max:4096'],
+                    'image' =>  ['image','mimes:jpeg,png,jpg,gif','max:10096'],
                     'status' =>  ['required']
                 ];
             }

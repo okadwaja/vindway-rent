@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>Vindway Rent</title>
+    <link rel="icon" href="{{ asset('storage/logo/logo-mini.png') }}" type="image/png"/>
+
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -42,11 +44,7 @@
         <div class="container">
           <div class="row align-items-center position-relative">
             <div class="col-3">
-              <div class="site-logo">
-                <a href="{{ url('/') }}"><strong>CarRental</strong></a>
-              </div>
             </div>
-
             <div class="col-9 text-right">
               <span class="d-inline-block d-lg-none"
                 ><a href="#" class="site-menu-toggle js-menu-toggle py-5"
@@ -63,9 +61,9 @@
                   </li>
                   <li><a href="{{ url('daftar-mobil') }}" class="nav-link">Daftar Mobil</a></li>
                   </li>
-                  <li><a href="{{ url('blog') }}" class="nav-link">Blog</a></li>
+                  <!-- <li><a href="{{ url('blog') }}" class="nav-link">Blog</a></li> -->
                   <li><a href="{{ url('tentang-kami') }}" class="nav-link">Tentang Kami</a></li>
-                  <li><a href="{{ url('kontak') }}" class="nav-link">Kontak</a></li>
+                  <li><a href="{{ url('kontak') }}" class="nav-link">Kritik & Saran</a></li>
                 </ul>
               </nav>
             </div>
@@ -79,10 +77,9 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 mb-4 mb-md-0">
-              <h2 class="mb-0 text-white">Apa yang kalian tunggu ?</h2>
+              <h2 class="mb-0 text-white">Tunggu apalagi?</h2>
               <p class="mb-0 opa-7">
-                Buruan sewa mobil sekarang sebelum harga bbm naik
-              </p>
+                Sewa mobilmu sekarang di Vindway — drive your way dengan nyaman dan hemat!</p>
             </div>
             <div class="col-lg-5 text-md-right">
               <a href="#" class="btn btn-primary btn-white">Sewa Sekarang</a>
@@ -118,36 +115,6 @@
               <div class="row">
                 <div class="col-lg-3">
                   <h2 class="footer-heading mb-4">Quick Links</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Resources</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Support</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Company</h2>
                   <ul class="list-unstyled">
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Testimonials</a></li>

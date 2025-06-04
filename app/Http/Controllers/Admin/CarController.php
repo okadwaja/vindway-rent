@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\Admin\CarRequest;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 
 class CarController extends Controller
 {
@@ -38,20 +40,31 @@ class CarController extends Controller
      */
     public function store(CarRequest $request)
     {
-        if($request->validated()) {
-            $image = $request->file('image')->store(
-                'cars/images', 'public'
-            );
+        if ($request->validated()) {
+            $file = $request->file('image');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $path = public_path('storage/cars/images/' . $filename);
+
+            // Resize image ke ukuran 1600x1200 (crop otomatis dari tengah)
+            $manager = new ImageManager(new GdDriver());
+            $image = $manager->read($file);
+            $image->cover(1600, 1200)->save($path);
+
+
             $slug = Str::slug($request->nama_mobil, '-');
 
-            Car::create($request->except('image') + ['image' => $image,'slug' => $slug]);
+            Car::create($request->except('image') + [
+                'image' => 'cars/images/' . $filename,
+                'slug' => $slug,
+            ]);
         }
 
         return redirect()->route('admin.cars.index')->with([
             'message' => 'berhasil di buat',
-            'alert-type' => 'success'
+            'alert-type' => 'success',
         ]);
     }
+
 
     /**
      * Display the specified resource.
@@ -77,24 +90,38 @@ class CarController extends Controller
      */
     public function update(CarRequest $request, Car $car)
     {
-        if($request->validated()){
+        if ($request->validated()) {
             $slug = Str::slug($request->nama_mobil, '-');
-            if($request->image) {
+
+            if ($request->image) {
+                // Hapus gambar lama
                 File::delete('storage/' . $car->image);
-                $image = $request->file('image')->store(
-                    'cars/images', 'public'
-                );
-                $car->update($request->except('image') + ['image' => $image, 'slug' => $slug]);
-            }else {
+
+                $file = $request->file('image');
+                $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+                $path = public_path('storage/cars/images/' . $filename);
+
+                // Resize image ke ukuran 1600x1200
+                $manager = new ImageManager(new GdDriver());
+                $image = $manager->read($file);
+                $image->cover(1600, 1200)->save($path);
+
+
+                $car->update($request->except('image') + [
+                    'image' => 'cars/images/' . $filename,
+                    'slug' => $slug,
+                ]);
+            } else {
                 $car->update($request->validated() + ['slug' => $slug]);
             }
         }
 
         return redirect()->route('admin.cars.index')->with([
             'message' => 'berhasil di edit',
-            'alert-type' => 'info'
+            'alert-type' => 'info',
         ]);
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -1,11 +1,11 @@
 <!-- Sidebar -->
 <div class="sidebar">
-    <!-- Sidebar user panel (optional) -->
+    <!-- Sidebar user panel (optional)
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
             <a href="{{ route('admin.profile.show') }}" class="d-block">{{ Auth::user()->name }}</a>
         </div>
-    </div>
+    </div> -->
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -20,14 +20,14 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="{{ route('admin.users.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-address-book"></i>
                     <p>
                         {{ __('Users') }}
                     </p>
                 </a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
                 <a href="{{ route('admin.types.index') }}" class="nav-link">
@@ -56,7 +56,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="{{ route('admin.blogs.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-rss"></i>
                     <p>
@@ -72,16 +72,7 @@
                         {{ __('Team') }}
                     </p>
                 </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{ route('admin.settings.index') }}" class="nav-link">
-                    <i class="nav-icon fa fa-cog"></i>
-                    <p>
-                        {{ __('Setting') }}
-                    </p>
-                </a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
                 <a href="{{ route('admin.contacts.index') }}" class="nav-link">
@@ -97,6 +88,15 @@
                     <i class="nav-icon fa fa-credit-card"></i>
                     <p>
                         {{ __('Booking') }}
+                    </p>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="{{ route('admin.settings.index') }}" class="nav-link">
+                    <i class="nav-icon fa fa-cog"></i>
+                    <p>
+                        {{ __('Setting') }}
                     </p>
                 </a>
             </li>

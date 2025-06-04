@@ -7,7 +7,14 @@
             <div class="col-lg-10">
               <div class="row mb-5">
                 <div class="col-lg-7 intro">
-                  <h1><strong>Sewa Mobil</strong> Dengan Satu Sentuhan.</h1>
+                  <div class="text-center">
+                    <img
+                      src="{{ asset('storage/logo/logo-removebg.png') }}"
+                      alt="Vindway Rent"
+                      class="img-fluid"
+                      style="max-height: 500px; width: auto;"
+                    >
+                  </div>
                 </div>
               </div>
 

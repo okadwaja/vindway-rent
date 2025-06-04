@@ -9,10 +9,10 @@
           <div class="row align-items-end">
             <div class="col-lg-5">
               <div class="intro">
-                <h1><strong>About</strong></h1>
+                <h1><strong>Kritik & Saran</strong></h1>
                 <div class="custom-breadcrumbs">
                   <a href="index.html">Home</a> <span class="mx-2">/</span>
-                  <strong>About</strong>
+                  <strong>Kritik & Saran</strong>
                 </div>
               </div>
             </div>
@@ -24,8 +24,8 @@
         <div class="container">
           <div class="row justify-content-center text-center">
             <div class="col-7 text-center mb-5">
-              <h2>Kontak Kami</h2>
-              <p>Saran dan kritik yang kami harapkan</p>
+              <h2>Kritik & Saran</h2>
+              <p>Silahkan masukkan kritik atau saran untuk kami</p>
               @if(count($errors) > 0 )
         <div class="content-header mb-0 pb-0">
             <div class="container-fluid">

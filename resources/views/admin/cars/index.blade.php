@@ -51,14 +51,14 @@
                                 <td>{{ $car->statusLabel() }}</td>
                                 <td>
                                 <div class="btn-group btn-group-sm">
-                                    <a href="{{ route('admin.cars.edit', $car) }}" class="btn btn-sm btn-primary">
-                                        <i class="fa fa-edit"></i>
+                                    <a href="{{ route('admin.cars.edit', $car) }}" class="btn btn-sm btn-primary mr-2">
+                                        <i class="fa fa-edit"></i> Edit
                                     </a>
                                     <form onclick="return confirm('are you sure !')" action="{{ route('admin.cars.destroy', $car) }}"
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i> Hapus</button>
                                     </form>
                                 </div>
                                 </td>

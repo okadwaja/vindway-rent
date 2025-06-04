@@ -19,7 +19,7 @@
                     @csrf 
                     @method('put')
                     <div class="form-group row border-bottom pb-4">
-                        <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                        <label for="nama" class="col-sm-2 col-form-label">Nama Kategori</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" name="nama" value="{{ old('nama', $type->nama) }}" id="nama">
                         </div>

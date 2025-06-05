@@ -56,7 +56,7 @@
                 </a>
             </li>
 
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a href="{{ route('admin.blogs.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-rss"></i>
                     <p>
@@ -65,7 +65,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="{{ route('admin.teams.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-users"></i>
                     <p>

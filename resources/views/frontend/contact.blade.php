@@ -1,17 +1,14 @@
 @extends('frontend.layout')
 
 @section('content')
-<div
-        class="hero inner-page"
-        style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')"
-      >
+      <div class="mt-4">
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-5">
-              <div class="intro">
+              <div class="intro" data-aos="fade-right">
                 <h1><strong>Kritik & Saran</strong></h1>
                 <div class="custom-breadcrumbs">
-                  <a href="index.html">Home</a> <span class="mx-2">/</span>
+                  <a href="{{ route('homepage') }}">Home</a> <span class="mx-2">/</span>
                   <strong>Kritik & Saran</strong>
                 </div>
               </div>
@@ -20,27 +17,26 @@
         </div>
       </div>
 
-      <div class="site-section bg-light" id="contact-section">
+      <div class="site-section bg-custom" id="contact-section">
         <div class="container">
           <div class="row justify-content-center text-center">
-            <div class="col-7 text-center mb-5">
-              <h2>Kritik & Saran</h2>
-              <p>Silahkan masukkan kritik atau saran untuk kami</p>
+            <div class="col-7 text-center mb-3">
+              <h5>Silahkan masukkan kritik atau saran untuk kami</h5>
               @if(count($errors) > 0 )
-        <div class="content-header mb-0 pb-0">
-            <div class="container-fluid">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul class="p-0 m-0" style="list-style: none;">
-                        @foreach($errors->all() as $error)
-                        <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
+              <div class="content-header mb-0 pb-0">
+                  <div class="container-fluid">
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                          <ul class="p-0 m-0" style="list-style: none;">
+                              @foreach($errors->all() as $error)
+                              <li>{{$error}}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  </div>
+              </div>
         @endif
         @if(session()->has('message'))
             <div class="content-header mb-0 pb-0">
@@ -106,7 +102,7 @@
                   <div class="col-md-6 mr-auto">
                     <input
                       type="submit"
-                      class="btn btn-block btn-primary text-white py-3 px-5"
+                      class="btn btn-main py-3 px-5"
                       value="Kirim Pesan"
                     />
                   </div>

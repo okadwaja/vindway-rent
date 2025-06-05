@@ -67,7 +67,7 @@
                   </li>
                   <li><a href="{{ url('daftar-mobil') }}" class="nav-link">Daftar Mobil</a></li>
                   </li>
-                  <li><a href="{{ url('blog') }}" class="nav-link">Syarat & Ketentuan </a></li>
+                  <li><a href="{{ url('syarat-ketentuan') }}" class="nav-link">Syarat & Ketentuan </a></li>
                   <li><a href="{{ url('tentang-kami') }}" class="nav-link">Tentang Kami</a></li>
                   <li><a href="{{ url('kontak') }}" class="nav-link">Kritik & Saran</a></li>
                 </ul>

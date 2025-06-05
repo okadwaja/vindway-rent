@@ -57,7 +57,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('admin.blogs.index') }}" class="nav-link">
+                <a href="{{ route('admin.terms.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-rss"></i>
                     <p>
                         {{ __('Blog') }}

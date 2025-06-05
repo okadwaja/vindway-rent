@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\TermController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('blog/{blog:slug}', [\App\http\Controllers\Frontend\BlogController::c
 Route::get('tentang-kami',[\App\http\Controllers\Frontend\AboutController::class,'index']);
 Route::get('kontak', [\App\http\Controllers\Frontend\ContactController::class,'index']);
 Route::post('kontak', [\App\http\Controllers\Frontend\ContactController::class,'store'])->name('contact.store');
+Route::get('/syarat-ketentuan', [TermController::class, 'index'])->name('frontend.terms');
 
 Auth::routes();
 
@@ -39,5 +41,7 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'a
     Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class)->only(['index','store','update']);
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->only(['index','destroy']);
     Route::resource('bookings', \App\Http\Controllers\Admin\BookingController::class)->only(['index','destroy']);
-    Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
+    // Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
+    Route::resource('terms', \App\Http\Controllers\Admin\TermController::class);
+
 });

@@ -1,17 +1,14 @@
 @extends('frontend.layout')
 
 @section('content')
-<div
-        class="hero inner-page"
-        style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')"
-      >
+      <div class="mt-4">
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-5">
-              <div class="intro">
+              <div class="intro" data-aos="fade-right">
                 <h1><strong>Daftar Mobil</strong></h1>
                 <div class="custom-breadcrumbs">
-                  <a href="index.html">Home</a> <span class="mx-2">/</span>
+                  <a href="{{ route('homepage') }}">Home</a> <span class="mx-2">/</span>
                   <strong>Daftar Mobil</strong>
                 </div>
               </div>
@@ -20,20 +17,16 @@
         </div>
       </div>
 
-      <div class="site-section bg-light">
+      <div class="site-section bg-custom">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-7">
-              <h2 class="section-heading"><strong>Daftar Mobil</strong></h2>
-              <p class="mb-5">
-                Kami menyediakan berbagai macam mobil.
-              </p>
-            </div>
-          </div>
+
+        @php
+            $waNumber = preg_replace('/[^0-9]/', '', $setting->phone ?? '');
+        @endphp
 
           <div class="row">
             @forelse($cars as $car)
-              <div class="col-md-6 col-lg-4 mb-4">
+              <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                   <div class="listing d-block align-items-stretch">
                     <div class="listing-img h-100 mr-4">
                       <img src="{{ Storage::url($car->image) }}" alt="Image" class="img-fluid" />
@@ -57,8 +50,12 @@
                         <p>
                         {{ $car->description }}
                         </p>
+
+                        @php
+                          $message = urlencode("Halo Vindway, saya tertarik untuk menyewa mobil *{$car->nama_mobil}*. Apakah unit ini masih tersedia? Terima kasih!");
+                        @endphp
                         <p>
-                          <a href="{{ route('car.show', $car) }}" class="btn btn-primary btn-sm">Sewa Sekarang</a>
+                          <a href="https://wa.me/{{ $waNumber }}?text={{ $message }}" target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i>  Sewa Sekarang</a>
                         </p>
                       </div>
                     </div>

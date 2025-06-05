@@ -29,8 +29,8 @@
       <strong>Temukan mobil terbaik untuk perjalanan Anda bersama Vindway.</strong>
     </p>
 
-    <a href="#sewa" class="btn btn-main px-4 py-2" style="font-size: 1rem;">
-      <strong>Sewa Sekarang</strong>
+    <a href="#lihat mobil" class="btn btn-main px-4 py-2" style="font-size: 1rem;">
+      <strong>Lihat Mobil</strong>
     </a>
   </div>
 </div>
@@ -65,7 +65,9 @@
                   </div>
                 </div>
               </form> -->
-
+@php
+    $waNumber = preg_replace('/[^0-9]/', '', $setting->phone ?? '');
+@endphp
 <div class="site-section">
   <div class="container">
     <h2 class="text-main section-heading"><strong>Cara Pemesanan</strong></h2>
@@ -107,7 +109,8 @@
 </div>
 
 <div class="site-section">
-  <div class="container">
+  <div>
+    <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-7 text-center order-lg-2">
         <div class="img-wrap-1 mb-5" data-aos="zoom-out">
@@ -126,11 +129,17 @@
           kami siap memastikan pengalaman sewa mobil Anda berjalan lancar, nyaman, dan memuaskan.
         </p>
 
-        <p><a href="#" class="btn btn-main">Kontak Kami</a></p>
+        @php
+          $message2 = urlencode("Halo Vindway, saya tertarik untuk menyewa mobil. Mohon informasinya terkait unit yang tersedia dan tarif sewanya. Terima kasih.")
+        @endphp
+        <p>
+          <a href="https://wa.me/{{ $waNumber }}?text={{ $message2 }}" target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i>  Kontak Kami</a>
+        </p>
       </div>
     </div>
+    </div>
     <!-- ✅ Section Keunggulan -->
-    <div class="py-5">
+    <div class="container py-5 mb-4">
       <div class="row g-4">
 
         <!-- Card 1 -->
@@ -169,7 +178,7 @@
       </div>
     </div>
 
-    <div class="site-section bg-light pt-4">
+    <div id="lihat mobil" class="site-section bg-custom pt-4">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
@@ -181,7 +190,7 @@
         </div>
 
         <div class="row">
-          @foreach($cars as $car)
+          @foreach($cars->take(6) as $car)
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
             <div class="listing d-block align-items-stretch">
               <div class="listing-img h-100 mr-4">
@@ -189,7 +198,7 @@
               </div>
               <div class="listing-contents h-100">
                 <h3>{{ $car->nama_mobil }}</h3>
-                <div class="text-main">
+                <div class="rent-price">
                   <strong>Rp{{ number_format($car->price,0,",",".") }}</strong><span class="mx-1">/</span>hari
                 </div>
                 <div class="d-block d-md-flex mb-3 border-bottom pb-3">
@@ -206,8 +215,12 @@
                   <p>
                     {{ $car->description}}
                   </p>
+
+                  @php
+                    $message = urlencode("Halo Vindway, saya tertarik untuk menyewa mobil *{$car->nama_mobil}*. Apakah unit ini masih tersedia? Terima kasih!");
+                  @endphp
                   <p>
-                    <a href="{{ route('car.show', $car) }}" class="btn btn-main">Sewa Sekarang</a>
+                    <a href="https://wa.me/{{ $waNumber }}?text={{ $message }}" target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i>  Sewa Sekarang</a>
                   </p>
                 </div>
               </div>
@@ -215,10 +228,18 @@
           </div>
           @endforeach
         </div>
+
+        {{-- Tombol Lihat Semua --}}
+        <div class="row">
+          <div class="col text-center mt-2">
+            <a href="{{ route('car.index') }}" class="btn btn-main btn-lg px-4 py-2">Lihat Semua Mobil</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="site-section bg-light pt-0">
+    <div class="site-section bg-custom pt-0">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">

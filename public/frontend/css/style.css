@@ -1,5 +1,8 @@
 /* Base */
 html {
+
+  scroll-behavior: smooth;
+
   overflow-x: hidden; }
 
 .font-size-10 {
@@ -1572,7 +1575,7 @@ h1{
   border-radius: 7px;
   background: #fff;
   padding: 30px;
-  border-bottom: 4px solid #f96d27;
+  border-bottom: 4px solid #052941;
   -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1); }
   .testimonial-2 blockquote {
@@ -1607,7 +1610,7 @@ h1{
     min-height: 200px; } */
 
 .custom-breadcrumbs {
-  padding-bottom: 40px; }
+  padding-bottom: 15px; }
   .custom-breadcrumbs a {
     color: #000; }
   .custom-breadcrumbs strong {
@@ -1723,7 +1726,7 @@ h1{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #f96d27;
+    background: #052941;
     color: #fff;
     position: relative; }
     .social li a > span {
@@ -1792,15 +1795,13 @@ h1{
   line-height: 1;
 }
 
-/* Sticky navbar hanya untuk layar besar */
-/* Navbar Desktop (≥ 992px) */
 /* DESKTOP ≥ 992px */
 @media (min-width: 992px) {
   .custom-navbar {
     position: sticky;
     top: 0;
     z-index: 1030;
-    background-color: #f96d27 !important;
+    background-color: #052941 !important;
     padding: 0rem 0rem !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
@@ -1827,7 +1828,7 @@ h1{
   }
 
   .custom-navbar .nav-link:hover {
-    color: #153f69 !important;
+    color: #0080ff !important;
     transform: translateY(-5px);
   }
 }
@@ -1835,14 +1836,26 @@ h1{
 /* MOBILE < 992px */
 @media (max-width: 991.98px) {
   .custom-navbar {
-    background-color: #f96d27 !important;
+    position: fixed; /* ubah dari default ke fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* pastikan di atas elemen lain */
+    background-color: #052941 !important;
     padding: 0.5rem 0rem !important;
+  }
+}
+
+/* car indev */
+/* MOBILE < 992px */
+@media (max-width: 991.98px) {
+  .intro {
+    margin-top: 40px;
   }
 }
 
 /* Warna utama */
 :root {
-  --main: #f96d27;
+  --main: #052941;
 }
 
 /* Background utama */
@@ -1868,8 +1881,11 @@ h1{
 }
 
 .btn-main:hover {
-  background-color: #c54408; /* sedikit lebih gelap saat hover */
+  background-color: #ffffff; /* sedikit lebih gelap saat hover */
 }
+
+.bg-custom {
+  background-color: #f5faff !important; }
 
 @media (max-width: 768px) {
   .hero img {

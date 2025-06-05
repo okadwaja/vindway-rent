@@ -77,6 +77,11 @@
         </div>
       </header>
 
+      @php
+        $waNumber = preg_replace('/[^0-9]/', '', $setting->phone ?? '');
+        $message2 = urlencode("Halo Vindway, saya tertarik untuk menyewa mobil. Mohon informasinya terkait unit yang tersedia dan tarif sewanya. Terima kasih.")
+      @endphp
+
       @yield('content')
 
       <div class="site-section bg-main py-5">
@@ -88,7 +93,7 @@
                 Sewa mobilmu sekarang di Vindway — drive your way dengan nyaman dan hemat!</p>
             </div></strong>
             <div class="col-lg-5 text-md-right">
-              <a href="#" class="btn btn-main btn-white text-main">Sewa Sekarang</a>
+              <a href="https://wa.me/{{ $waNumber }}?text={{ $message2 }}" target="_blank" class="btn btn-main btn-white text-main"><i class="fa-brands fa-whatsapp"></i>  Sewa Sekarang</a>
             </div>
           </div>
         </div>

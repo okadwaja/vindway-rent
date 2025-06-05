@@ -17,6 +17,12 @@ class CarController extends Controller
         if($request->category_id && $request->penumpang){
             $cars = $cars->Where('type_id',$request->category_id)->Where('penumpang','>=',$request->penumpang);
         }
+
+         // Cek apakah ada pencarian nama mobil
+        if ($request->filled('q')) {
+            $search = $request->q;
+            $cars = $cars->where('nama_mobil', 'like', '%' . $search . '%');
+        }
         
         $cars = $cars->get();
         return view('frontend.car.index', compact('cars'));

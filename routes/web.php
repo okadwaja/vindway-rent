@@ -16,10 +16,10 @@ use App\Http\Controllers\Frontend\TermController;
 
 Route::get('/', [\App\http\Controllers\Frontend\HomepageController::class,'index'])->name('homepage');
 Route::get('daftar-mobil', [\App\http\Controllers\Frontend\CarController::class,'index'])->name('car.index');
-Route::get('daftar-mobil/{car}', [\App\http\Controllers\Frontend\CarController::class,'show'])->name('car.show');
+// Route::get('daftar-mobil/{car}', [\App\http\Controllers\Frontend\CarController::class,'show'])->name('car.show');
 Route::post('daftar-mobil', [\App\http\Controllers\Frontend\CarController::class,'store'])->name('car.store');
-Route::get('blog', [\App\http\Controllers\Frontend\BlogController::class,'index'])->name('blog.index');
-Route::get('blog/{blog:slug}', [\App\http\Controllers\Frontend\BlogController::class,'show'])->name('blog.show');
+// Route::get('blog', [\App\http\Controllers\Frontend\BlogController::class,'index'])->name('blog.index');
+// Route::get('blog/{blog:slug}', [\App\http\Controllers\Frontend\BlogController::class,'show'])->name('blog.show');
 Route::get('tentang-kami',[\App\http\Controllers\Frontend\AboutController::class,'index']);
 Route::get('kontak', [\App\http\Controllers\Frontend\ContactController::class,'index']);
 Route::post('kontak', [\App\http\Controllers\Frontend\ContactController::class,'store'])->name('contact.store');

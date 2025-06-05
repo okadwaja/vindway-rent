@@ -18,6 +18,19 @@
       </div>
 
       <div class="site-section bg-custom">
+        <div class="row mb-4">
+          <div class="col-md-6 mx-auto">
+            <form action="{{ route('car.index') }}" method="GET">
+              <div class="input-group mb-4">
+                <input type="text" name="q" class="form-control" placeholder="Cari nama mobil..." value="{{ request('q') }}">
+                <div class="input-group-append">
+                  <button class="btn btn-main" type="submit"><i class="fa fa-search"></i> Cari</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
         <div class="container">
 
         @php

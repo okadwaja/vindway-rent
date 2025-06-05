@@ -8,10 +8,10 @@
             <div class="col-lg-5">
 
               <div class="intro" data-aos="fade-right">
-                <h1><strong>Blog</strong></h1>
+                <h1><strong>Syarat & Ketentuan</strong></h1>
                 <div class="custom-breadcrumbs">
                   <a href="{{ route('homepage') }}">Home</a> <span class="mx-2">/</span>
-                  <strong>Blog</strong></div>
+                  <strong>Syarat & Ketentuan</strong></div>
               </div>
 
             </div>
@@ -26,17 +26,13 @@
         <div class="row">
 
         @forelse($blogs as $blog)
-          <div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-12 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
-              <a href="{{ route('blog.show',$blog->slug) }}">
-                <img src="{{ Storage::url($blog->image) }}" alt="Image"
-                 class="img-fluid">
-              </a>
               <div class="post-entry-1-contents">
                 
-                <h2><a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a></h2>
+                <h2><strong>{{ $blog->title }}</strong></h2>
+                <div>{!! $blog->description !!}</div>
                 <span class="meta d-inline-block mb-3">{{ date('M d, Y', strtotime($blog->created_at)) }}</span>
-                <p>{{ $blog->excerpt }}</p>
               </div>
             </div>
           </div>

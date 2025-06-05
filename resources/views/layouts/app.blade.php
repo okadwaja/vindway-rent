@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @stack('style-alt')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -55,7 +57,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary bg-main elevation-4">
         <!-- Brand Logo -->
             <img src="{{ asset('storage/logo/logo-white.png') }}" alt="Vindway Logo"
                 class="img-fluid ml-3 mt-2"
@@ -64,7 +66,7 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper bg-custom">
     @if(count($errors) > 0 )
         <div class="content-header mb-0 pb-0">
             <div class="container-fluid">

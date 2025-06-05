@@ -11,7 +11,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Data Mobil</h3>
-                <a href="{{ route('admin.cars.create')}}" class="btn btn-success shadow-sm float-right"> <i class="fa fa-plus"></i> Tambah </a>
+                <a href="{{ route('admin.cars.create')}}" class="btn btn-main shadow-sm float-right"> <i class="fa fa-plus"></i> Tambah </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

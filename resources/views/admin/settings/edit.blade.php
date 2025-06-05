@@ -10,7 +10,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Edit Data</h3>
+                <h3 class="card-title">Settings</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -36,12 +36,6 @@
                         </div>
                     </div>
                     <div class="form-group row border-bottom pb-4">
-                        <label for="footer_description" class="col-sm-2 col-form-label">Footer Description</label>
-                        <div class="col-sm-10">
-                          <textarea name="footer_description" id="footer_description" class="form-control" cols="30" rows="6">{{ old('footer_description', $setting->footer_description) }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row border-bottom pb-4">
                         <label for="tentang_perusahaan" class="col-sm-2 col-form-label">Tentang Perusahaan</label>
                         <div class="col-sm-10">
                           <textarea name="tentang_perusahaan" id="tentang_perusahaan" class="form-control" cols="30" rows="6">{{ old('tentang_perusahaan', $setting->tentang_perusahaan) }}</textarea>
@@ -51,6 +45,12 @@
                         <label for="sejarah_perusahaan" class="col-sm-2 col-form-label">Sejarah Perusahaan</label>
                         <div class="col-sm-10">
                           <textarea name="sejarah_perusahaan" id="sejarah_perusahaan" class="form-control" cols="30" rows="6">{{ old('sejarah_perusahaan', $setting->sejarah_perusahaan) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row border-bottom pb-4">
+                        <label for="footer_description" class="col-sm-2 col-form-label">Footer Description</label>
+                        <div class="col-sm-10">
+                          <textarea name="footer_description" id="footer_description" class="form-control" cols="30" rows="6">{{ old('footer_description', $setting->footer_description) }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row border-bottom pb-4">
@@ -81,7 +81,7 @@
        pattern="https://.*" class="form-control" name="twitter" value="{{ old('twitter', $setting->twitter) }}" id="twitter">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-main">Save</button>
                 </form>
               </div>
               <!-- /.card-body -->

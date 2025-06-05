@@ -10,8 +10,8 @@
 
             <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Daftar Syarat & Ketentuan</h3>
-                <a href="{{ route('admin.terms.create') }}" class="btn btn-success shadow-sm float-right"> 
+                <h3 class="card-title">Syarat & Ketentuan</h3>
+                <a href="{{ route('admin.terms.create') }}" class="btn btn-main shadow-sm float-right"> 
                 <i class="fa fa-plus"></i> Tambah 
                 </a>
             </div>
@@ -37,15 +37,15 @@
                         <td>{{ $term->status_label }}</td>
                         <td>
                             <div class="btn-group btn-group-sm">
-                            <a href="{{ route('admin.terms.edit', $term) }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-edit"></i>
+                            <a href="{{ route('admin.terms.edit', $term) }}" class="btn btn-sm btn-primary mr-2">
+                                <i class="fa fa-edit"></i> Edit
                             </a>
                             <form onclick="return confirm('Apakah yakin ingin menghapus?')" 
                                     action="{{ route('admin.terms.destroy', $term) }}" 
                                     method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</button>
                             </form>
                             </div>
                         </td>

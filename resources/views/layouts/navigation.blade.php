@@ -60,7 +60,7 @@
                 <a href="{{ route('admin.terms.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-rss"></i>
                     <p>
-                        {{ __('Blog') }}
+                        {{ __('Syarat & Ketentuan') }}
                     </p>
                 </a>
             </li>
@@ -78,19 +78,19 @@
                 <a href="{{ route('admin.contacts.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-comments"></i>
                     <p>
-                        {{ __('Pesan') }}
+                        {{ __('Kritik & Saran') }}
                     </p>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="{{ route('admin.bookings.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-credit-card"></i>
                     <p>
                         {{ __('Booking') }}
                     </p>
                 </a>
-            </li>
+            </li> -->
             
             <li class="nav-item">
                 <a href="{{ route('admin.settings.index') }}" class="nav-link">

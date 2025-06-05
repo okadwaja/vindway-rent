@@ -11,7 +11,7 @@
             <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Edit Data</h3>
-                <a href="{{ route('admin.terms.index') }}" class="btn btn-success shadow-sm float-right">
+                <a href="{{ route('admin.terms.index') }}" class="btn btn-main shadow-sm float-right">
                 <i class="fa fa-arrow-left"></i> Kembali
                 </a>
             </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-main">Update</button>
                 </form>
             </div>
 

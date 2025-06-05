@@ -1,0 +1,35 @@
+/* Warna utama */
+:root {
+    --main: #052941;
+}
+
+/* Background utama */
+.bg-main {
+    background-color: var(--main) !important;
+}
+
+/* Teks utama */
+.text-main {
+    color: var(--main) !important;
+}
+
+/* Border utama */
+.border-main {
+    border-color: var(--main) !important;
+}
+
+/* Button dengan warna utama */
+.btn-main {
+    background-color: var(--main);
+    color: white;
+    border: none;
+}
+
+.btn-main:hover {
+    background-color: #9f9f9f;
+    color: var(--main); /* Opsional: ganti warna teks agar kontras */
+}
+
+.bg-custom {
+    background-color: #f5faff !important; }
+

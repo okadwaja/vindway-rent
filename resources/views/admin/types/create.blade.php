@@ -11,7 +11,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Tambah Data</h3>
-                <a href="{{ route('admin.types.index')}}" class="btn btn-success shadow-sm float-right"> <i class="fa fa-arrow-left"></i> Kembali</a>
+                <a href="{{ route('admin.types.index')}}" class="btn btn-main shadow-sm float-right"> <i class="fa fa-arrow-left"></i> Kembali</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -23,7 +23,7 @@
                           <input type="text" class="form-control" name="nama" value="{{ old('nama') }}" id="nama">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-main">Save</button>
                 </form>
               </div>
               <!-- /.card-body -->

@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="card-body login-card-body">
+        <div class="text-center mb-4">
+            <img src="{{ asset('storage/logo/logo-removebg.png') }}" alt="Logo" width="80">
+        </div>
         <p class="login-box-msg">{{ __('Login') }}</p>
 
         <form action="{{ route('login') }}" method="post">
@@ -36,7 +39,7 @@
             </div>
 
             <div class="row">
-                <div class="col-8">
+                <div class="col-8 mb-3">
                     <div class="icheck-primary">
                         <input type="checkbox" id="remember" name="remember">
                         <label for="remember">
@@ -45,15 +48,15 @@
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-4">
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('Login') }}</button>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-main btn-block">{{ __('Login') }}</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
 
         @if (Route::has('password.request'))
-            <p class="mb-1">
+            <p class="mt-3 text-center">
                 <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
             </p>
         @endif

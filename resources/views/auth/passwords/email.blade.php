@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="card-body login-card-body">
+        <div class="text-center mb-4">
+            <img src="{{ asset('storage/logo/logo-removebg.png') }}" alt="Logo" width="80">
+        </div>
         <p class="login-box-msg">{{ __('Reset Password') }}</p>
 
         @if (session('status'))
@@ -31,10 +34,15 @@
             <div class="row">
                 <div class="col-12">
                     <button type="submit"
-                            class="btn btn-primary btn-block">{{ __('Send Password Reset Link') }}</button>
+                            class="btn btn-main btn-block">{{ __('Send Password Reset Link') }}</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
+        @if (Route::has('login'))
+            <p class="mt-3 text-center">
+                <a href="{{ route('login') }}">{{ __('Already have an account? Login here') }}</a>
+            </p>
+        @endif
     </div>
 @endsection
